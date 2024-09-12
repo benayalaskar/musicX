@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">List Musik</string>
+    <string name="search_musik">Telusuri Musik</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_about">About</string>
+    <string name="my_name">Benaya Laskar Firdaus</string>
+    <string name="my_email">benayalaskar2002@gmail.com</string>
+    <string name="add_to_favorite">Tambahkan ke Daftar Favorite</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="delete_favorite">Hapus Musik favorite</string>
+    <string name="favorite_kosong">Favorite Kosong!!</string>
+</resources>
