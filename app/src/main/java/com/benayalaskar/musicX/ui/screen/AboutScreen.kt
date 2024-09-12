@@ -1,6 +1,7 @@
 package com.benayalaskar.musicX.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
@@ -45,16 +47,24 @@ fun AboutScreen(
                 .clip(RoundedCornerShape(16.dp))
 
         )
-        Image(
-            painter = painterResource(id = R.drawable.img),
-            contentDescription = null,
+        Box(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(5.dp)
                 .size(150.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .shadow(15.dp, RoundedCornerShape(16.dp))
-        )
+                .shadow(8.dp, RoundedCornerShape(8.dp))
+                .clip(RoundedCornerShape(8.dp))
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.img),
+                contentDescription = null,
+                contentScale = ContentScale.Crop, // Ensures the image fills the box
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(RoundedCornerShape(8.dp))
+                    .shadow(8.dp, RoundedCornerShape(8.dp))
+            )
+        }
         Text(
             text = stringResource(id = R.string.my_name),
             modifier = Modifier
@@ -76,4 +86,10 @@ fun AboutScreen(
             ),
         )
     }
+}
+
+@Preview
+@Composable
+fun aboutPreview() {
+    AboutScreen()
 }
